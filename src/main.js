@@ -339,7 +339,7 @@ class Accessibility {
         }
         ._access-menu ._menu-reset-btn {
             right: 5px;
-            color: #4054b2;
+            color: ` + this.options.icon.backgroundColor +`;
             transition: .3s ease;
             transform: rotate(0deg);
         }
@@ -395,6 +395,15 @@ class Accessibility {
         }
         ._access-menu ul li.not-supported {
             display: none;
+        }
+        ._access-copyright{
+            font-family: Arial;
+            font-size: 12px;
+            text-align: center;
+            margin-top: 2px;
+            padding-top: 5px;
+            border-top: 1px solid rgba(0,0,0,.05);
+            padding-bottom: 2px;
         }
         ._access-menu ul li:before {
             content: ' ';
@@ -703,6 +712,18 @@ class Accessibility {
                                     text: this.options.labels.speechToText
                                 }
                             ]
+                        }
+                    ]
+                },
+                {
+                    type: 'div',
+                    attrs: {
+                        'class': '_access-copyright'
+                    },
+                    children: [
+                        {
+                            type: '#text',
+                            text: '© 2020 Universidad de Córdoba'
                         }
                     ]
                 }
